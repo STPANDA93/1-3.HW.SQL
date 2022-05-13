@@ -1,4 +1,4 @@
---1.Создать таблицу employees
+--1.Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі employees
 --id. serial,  primary key,
 --employee_name. Varchar(50), not null
 
@@ -7,7 +7,7 @@ create table employees(
 	employee_name varchar(50) not null
 );
 
---2. Наполнить таблицу employee 70 строками.
+--2. ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі employee 70 Г±ГІГ°Г®ГЄГ Г¬ГЁ
 
 insert into employees(employee_name)
 values ('Richard Walton'),
@@ -83,7 +83,7 @@ values ('Richard Walton'),
        
 select * from employees;
 
---3. Создать таблицу salary
+--3. Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі salary
 --id. Serial  primary key,
 --monthly_salary. Int, not null
 
@@ -92,7 +92,7 @@ create table salary(
 	monthly_salary int not null
 );
 	
---4. Наполнить таблицу salary 15 строками:
+--4. ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі salary 15 Г±ГІГ°Г®ГЄГ Г¬ГЁ:
 
 insert into salary(monthly_salary)
 values (1000),
@@ -114,7 +114,7 @@ values (1000),
       
 select * from salary;
 
---5. Создать таблицу employee_salary
+--5. Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі employee_salary
 --id. Serial  primary key,
 --employee_id. Int, not null, unique
 --salary_id. Int, not null
@@ -125,8 +125,8 @@ create table employee_salary(
 	salary_id int not null
 );
 
---6. Наполнить таблицу employee_salary 40 строками:
---в 10 строк из 40 вставить несуществующие employee_id
+--6. ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі employee_salary 40 Г±ГІГ°Г®ГЄГ Г¬ГЁ:
+--Гў 10 Г±ГІГ°Г®ГЄ ГЁГ§ 40 ГўГ±ГІГ ГўГЁГІГј Г­ГҐГ±ГіГ№ГҐГ±ГІГўГіГѕГ№ГЁГҐ employee_id
 
 insert into employee_salary(employee_id, salary_id)
 values (1, 1),
@@ -172,7 +172,7 @@ values (1, 1),
       
 select * from employee_salary;
 
---7. Создать таблицу roles
+--7. Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі roles
 --id. Serial  primary key,
 --role_name. int, not null, unique
        
@@ -181,14 +181,14 @@ create table roles(
 	role_name int not null unique
 );
 
---8. Поменять тип столба role_name с int на varchar(30)
+--8. ГЏГ®Г¬ГҐГ­ГїГІГј ГІГЁГЇ Г±ГІГ®Г«ГЎГ  role_name Г± int Г­Г  varchar(30)
 
 select * from roles;
 
 alter table roles 
 alter column role_name type varchar(30) using role_name::varchar(30);
 
---9. Наполнить таблицу roles 20 строками:
+--9. ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі roles 20 Г±ГІГ°Г®ГЄГ Г¬ГЁ:
 
 insert into roles(role_name)
 values ('Junior Python developer'),
@@ -212,10 +212,10 @@ values ('Junior Python developer'),
        ('Middle Automation QA engineer'),
        ('Senior Automation QA engineer');
       
---10. Создать таблицу roles_employee
+--10. Г‘Г®Г§Г¤Г ГІГј ГІГ ГЎГ«ГЁГ¶Гі roles_employee
 --id. Serial  primary key,
---employee_id. Int, not null, unique (внешний ключ для таблицы employees, поле id)
---role_id. Int, not null (внешний ключ для таблицы roles, поле id)
+--employee_id. Int, not null, unique (ГўГ­ГҐГёГ­ГЁГ© ГЄГ«ГѕГ· Г¤Г«Гї ГІГ ГЎГ«ГЁГ¶Г» employees, ГЇГ®Г«ГҐ id)
+--role_id. Int, not null (ГўГ­ГҐГёГ­ГЁГ© ГЄГ«ГѕГ· Г¤Г«Гї ГІГ ГЎГ«ГЁГ¶Г» roles, ГЇГ®Г«ГҐ id)
       
 create table roles_employee(
 	id serial primary key,
@@ -229,7 +229,7 @@ create table roles_employee(
 
 select * from roles_employee;
 
---11. Наполнить таблицу roles_employee 40 строками:
+--11. ГЌГ ГЇГ®Г«Г­ГЁГІГј ГІГ ГЎГ«ГЁГ¶Гі roles_employee 40 Г±ГІГ°Г®ГЄГ Г¬ГЁ:
 
 insert into roles_employee(employee_id, role_id)
 values (1, 1),
